@@ -63,9 +63,6 @@ def product_view(request):
 def create_product(request):
     if request.method == "POST":
         form = ProductForm(request.POST)
-        print(form.is_valid())
-        print(form.errors)
-        print(form)
         if form.is_valid():
             form.save()
             return redirect('product')
